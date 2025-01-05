@@ -16,4 +16,13 @@ services:
       - START_PULSEAUDIO=0
       - KASM_AUTH=basic
       - KASM_MENU=0
-    command: ["--no-auth"] 
+    command: ["--no-auth"]
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: '2'
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3" 
